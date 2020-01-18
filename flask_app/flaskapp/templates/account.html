@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <h2 class="account-heading">{{ current_user.username }} </h2>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Account Info</legend>
+                    <div class="form-group"> <!-- This class is to group the forms-->
+                        {{ form.survey_token.label(class="form-control-label") }}
+                        {% if form.survey_token.errors %}
+                            {{ form.survey_token(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.survey_token.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.survey_token(class="form-control form-control-lg") }}
+                        {% endif %}
+                        <small id="surveyTokenKey" class="form-text text-muted">To recieve your survey token, complete your analysis on the dashboard site and click on the "Survey Token" button then scroll down.</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.submit(class="btn btn-outline-info") }}
+                    </div>
+                </fieldset>
+        </form>
+    </div>
+
+{% endblock content %}
