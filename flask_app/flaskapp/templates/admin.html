@@ -1,7 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class="content-section">
-        <h1> Admin Page </h1>
-        <a href="{{ url_for('download') }}" target="_blank"><button class='btn btn-outline-info'>Download!</button></a>
+        <fieldset class="form-group">
+            <h1> Data Retrieval </h1>
+            <p>
+                Hi Professor, <br/> <br/>
+                In order to download the most up-to-date data, please click the "Download" button below. <br /> <br />
+                Please keep in mind that the data is currently being stored in a JSON format. <br /> <br />
+    
+                Warm Regards, <br /> <br />
+    
+                Aditya
+            </p>
+            <a href="{{ url_for('download') }}" target="_blank"><button class='btn btn-outline-info'>Download!</button></a>    
+        </fieldset>
     </div>
 {% endblock %}

@@ -1,4 +1,14 @@
 {% extends "layout.html" %} <!-- All files are given w/ reference to folder names static & template -->
 {% block content %}
-    <h1> HOME </h1>
+    {% if current_user.is_authenticated %}
+        <h1> Dear {{ current_user.username }}, </h1>
+        <p> Thank you for choosing to participate in our Big Data Experiment!</p>
+        <p> In order to make the process as smooth as possible, we have created a workflow for you to follow below!</p>
+        <p> If you have any questions or concerns, please feel free to shoot us an email! </p>
+
+    {% else %}
+        <h1> Dear Visitor, </h1> 
+        <p> Welcome to the _______ Survey Site. </p>
+        <p> To participate in the survey, please click on the Qualtics Link you recieved in your inbox</p>
+    {% endif %}
 {% endblock content %}
