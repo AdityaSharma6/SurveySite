@@ -23,14 +23,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggle">
                   <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
+                    <a class="nav-item nav-link" href="{{ url_for('main.home') }}">Home</a>
                   </div>
                   <!-- Navbar Right Side -->
                   <div class="navbar-nav">
 
                     {% if current_user.is_authenticated %}
                       {% if current_user.username == "AdminDeveloper" %}
-                        <a class="nav-item nav-link" href="{{ url_for('admin') }}" target="_blank"/>Admin</a>
+                        <a class="nav-item nav-link" href="{{ url_for('main.admin') }}" target="_blank"/>Admin</a>
                       {% endif %}
 
                       {% if current_user.survey_type == 1 %}
@@ -39,11 +39,11 @@
                         <a class="nav-item nav-link" href=https://bdd1.herokuapp.com target="_blank"/>Experiment</a>
                       {% endif %}
                       
-                      <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
-                      <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+                      <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Account</a>
+                      <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Logout</a>
                     {% else %}
-                      <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
-                      <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+                      <a class="nav-item nav-link" href="{{ url_for('users.login') }}">Login</a>
+                      <a class="nav-item nav-link" href="{{ url_for('users.register') }}">Register</a>
                     {% endif %}
                   </div>
                 </div>
