@@ -1,14 +1,75 @@
 {% extends "layout.html" %} <!-- All files are given w/ reference to folder names static & template -->
 {% block content %}
-    {% if current_user.is_authenticated %}
-        <h1> Dear {{ current_user.username }}, </h1>
-        <p> Thank you for choosing to participate in our Big Data Experiment!</p>
-        <p> In order to make the process as smooth as possible, we have created a workflow for you to follow below!</p>
-        <p> If you have any questions or concerns, please feel free to shoot us an email! </p>
+    <div class="content-section">
+        {% if current_user.is_authenticated %}
+            <div class="border-bottom mb-4">
+                <h1> Dear {{ current_user.username }}, </h1>
+            </div>
+            <div>
+                <div class="content-section">
+                    <h5> Step 1 - Information</h5>
+                    <p> 
+                        In order to participate in this survey, you will have recieved a Qualtrics Survey Link in your email.
+                        Unfortunately, if you didn't recieve a link then you are ineligible to participate. 
+                    </p>
+                 </div>
+                 <div class="content-section">
+                    <h5> Step 2 - Sign Up </h5>
+                    <p> 
+                        To register your account, please click the "Register" icon at the top of the nav bar.
+                        When selecting a username, please select a username that is completely random. Do not include any identifying pieces of information in your username (name, nickname, company etc...)
+                        If any username contains any identifying piece of information, all information related to it will be discarded and the respective individual's participation will be nullified.
+                    </p>
+                    <p>  </p>
 
-    {% else %}
-        <h1> Dear Visitor, </h1> 
-        <p> Welcome to the _______ Survey Site. </p>
-        <p> To participate in the survey, please click on the Qualtics Link you recieved in your inbox</p>
-    {% endif %}
+                 </div>
+                 <div class="content-section">
+                    <h5> Step 3 - Big Data Experiment </h5>
+                    <p> 
+                        Congragulations! If you are here, you have successfully set up your account!
+                        Please click the "Experiment" link at the nav-bar to begin your Experiment.
+                        
+                        The goal of the experiment is for you to answer the following question "INSERT_QUESTION?"
+                        Once you have arrived at your conclusion, execute the following instructions
+                        <ul>
+                            <li> Scroll to the bottom of the page </li>
+                            <li> Click on the "Generate Your Survey Token" button </li>
+                            <li> Scroll even further down. </li>
+                            <li> Notice a series of numbers seperated by spaces. This is your survey token. </li>
+                            <li> Write down only the numbers and proceed to Step 4</li>
+                        </ul>
+                    </p>
+                 </div>
+                 <div class="content-section">
+                    <h5> Step 4 - Experiment Completion </h5>
+                    <p> 
+                        At this stage, you should have your Survey Token. <br />
+                        If you do not have your Survey Token, please return to Step 3 and follow the instructions carefully. <br />
+                        However, in the event that you clicked the Survey Token and no token appeared below, please use the following Safety Token "0"
+                        
+                        To continue, please execute the following steps precisely.
+                        <ul>
+                            <li> Click on "Account" in the Nav-Bar </li>
+                            <li> In the "Account Info" section, input only the numbers from your Survey Token. If you are using the Safety Token, please input "0".  </li>
+                            <li> Click Update </li>
+                            <li> Proceed to Step 5</li>
+                        </ul>
+                    </p>
+                 </div>
+                 <div class="content-section">
+                    <h5> Step 5 - Qualtrics Return</h5>
+                    <p> 
+                        Congragulations {{ current_user.username }}! You have successfully completed 75% of the Experiment. Please return to the Qualtrics Survey Tab and continue with the Survey.
+                    </p>
+                 </div>
+            </div>
+        {% else %}
+        <div class="border-bottom mb-4">
+            <h1> Dear Visitor, </h1> 
+        </div>
+            <p> Welcome to the Big Data Experiement Management Site. </p>
+            <p> To participate in the survey, please click on the Qualtics Link you recieved in your inbox</p>
+            <p> If you didn't recieve a link, then unfortunately, you will not be able to proceed with the Experiment.</p>
+        {% endif %}
+    </div>
 {% endblock content %}
