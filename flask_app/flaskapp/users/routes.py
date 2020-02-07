@@ -16,7 +16,7 @@ def register():
         return redirect(url_for("main.home")) 
     if form.validate_on_submit():
         user1 = User(username=form.username.data)
-        print(User.query.all())
+        #print(User.query.all())
         db.session.add(user1)
         db.session.commit()
         flash(f"Dear {form.username.data}, your account has successfully been created account!", "success")
