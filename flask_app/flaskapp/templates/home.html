@@ -24,7 +24,7 @@
 
                  </div>
                  <div class="content-section">
-                    <h5> Step 3 - Big Data Experiment </h5>
+                    <h5> Step 1 - Data Experiment </h5>
                     <p> 
                         Congragulations! If you are here, you have successfully set up your account!
                         Please click the "Experiment" link at the nav-bar to begin your Experiment.
@@ -67,9 +67,9 @@
         <div class="border-bottom mb-4">
             <h1> Dear Visitor, </h1> 
         </div>
-            <p> Welcome to the Data Experiement Management Site. </p>
-            <p> Please click on the "Register" link on the top right corner of the navigation bar.</p>
-            <p> If you already registered your account, please click on the "Login" link in the top right corner of the navigation bar to login and continue with the experiment.</p>
+            <p> Welcome to the Data Analysis Site. </p>
+            <p> If this is your first time here, please click on the following hyperlink to generate and register your username: <a class="ml-2" href="{{ url_for('users.register') }}">Register</a></p>
+	    <p> Once you have registered your account, please click on the following hyperlink to login and follow the next series of instructions: <a class="ml-2" href="{{ url_for('users.login') }}">Login</a></p>
         {% endif %}
     </div>
 {% endblock content %}
